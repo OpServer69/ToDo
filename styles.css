@@ -1,0 +1,258 @@
+*, 
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Rubick";
+}
+*:focus{
+  outline: none;
+}
+
+ul{
+  list-style: none;
+  padding: 0px;
+  overflow-y:auto;
+  max-height:550px;
+  
+}
+
+span{
+  margin: 5px;
+  padding: 10px;
+  user-select:none;
+}
+
+h1{
+  margin: 0px;
+}
+
+body{
+  margin: 0px;
+}
+
+li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  width: 75vw;
+  height: auto;
+  background: linear-gradient(90deg, rgb(118, 129, 158) 0%, rgba(123, 134, 164,0.7) 70%, rgba(255, 255, 255, 0.2) 100%);
+  border-radius: 10px 15px 10px 25px;
+  box-shadow: 2px 3px 10px black inset;
+  transition: 0.4s;
+  filter: brightness(90%);
+  opacity: 0.95;
+  font-size: 25px;
+  font-weight: 400;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+  
+}
+
+.li_hover:hover{
+  filter: brightness(110%);
+  color:rgb(31, 18, 22,1); 
+  cursor: pointer;
+}
+
+.button_checkboxs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  user-select: none;
+}
+
+.checkbox{
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  border-width: 0;
+  transition: 0.4s;
+  box-shadow: 2px 2px 3px rgb(46, 23, 14,1);
+  
+}
+
+.checkbox:hover{
+  filter: brightness(110%);
+  cursor: pointer;
+  box-shadow: 5px 5px 2px rgb(46, 23, 14,1);
+  color: rgb(31, 18, 22,1);
+  background: linear-gradient(130deg, rgba(147, 177, 205,0.7) 0%, rgba(255, 228, 145,0.7) 100%);
+  transform: scale(1.02);
+  
+}
+
+.task_title_done{
+  text-decoration: line-through;
+  background: linear-gradient(90deg, rgb(130, 196, 136) 0%, rgba(108, 148, 136, 0.7) 70%, rgba(255, 255, 255, 0.01) 100%);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.checkbox img{
+  width: 80%;
+  height: 80%;
+  pointer-events: none;
+}
+
+input{
+  outline: none;
+}
+
+form{
+  display: flex;
+}
+
+.conteiner{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("img/disco.jpg");
+  background-repeat: no-repeat;
+  transition: 1s;
+  background-size: 100% 100%;
+  align-items: center;
+
+
+  
+}
+
+.conteiner_backgraund{
+  background-image: url("img/disco_modal.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.modal{
+  position: fixed;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y:auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s, visibility 1s;
+}
+
+.modal__box{
+  max-width: 800px;
+  width: 60vw;
+  padding: 45px;
+  border-radius: 10px 30px 15px 70px;
+  z-index: 1;
+  background-color: white;
+  margin: 30px 15px;
+  box-shadow: 11px 11px 10px -7px rgba(34, 60, 80, 0.2);
+  transform: scale(0);
+  transition: transform 0.7s;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(123, 134, 164,1) 0%, rgba(203, 79, 34,1) 100%);
+  position: relative;
+  display: flex;
+  gap: 50px;
+  opacity: 0.9;
+  
+}
+
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal.open .modal__box{
+  transform: scale(1);
+}
+
+.add_task{
+  width: 75vw;
+  margin-top: 50px;
+  background: linear-gradient(90deg, rgba(147, 177, 205,0.5) 0%, rgba(255, 228, 145,0.9) 100%);
+  border-width: 0;
+  border-radius: 13% 10% 16% 84% / 71% 23% 77% 29% ;
+  color: rgb(31, 18, 22,1);
+  box-shadow: 9px 5px 15px  rgb(46, 23, 14,1);
+  filter: brightness(98%);
+  transition: 0.7s;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 100px;
+  user-select: none;
+  
+}
+
+.add_task:hover{
+  filter: brightness(110%);
+  cursor: pointer;
+  box-shadow: 5px 5px 15px rgb(46, 23, 14,1);
+  color: rgb(80, 17, 37);
+  background: linear-gradient(130deg, rgba(147, 177, 205,0.5) 0%, rgba(255, 228, 145,1) 100%);
+}
+
+.input_form_control{
+  border-width: 0;
+  width: 30vw;
+  font-size: 20px;
+  border-radius: 10px 60px 10px 50px;
+  padding: 20px 40px;
+  font-weight: 500;
+}
+
+.button_closed{
+  user-select: none;
+  width: 30px;
+  position: absolute;
+  border: none;
+  background-color: rgba(106, 40, 26,1);
+  padding: 5px;
+  top: 7px;
+  right: 8px;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  border-radius: 5px 30px 5px 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transform: scale(1.01);
+  transition: 1s;
+}
+
+.button_closed:hover{
+  box-shadow: 3px 2px 2px rgb(1, 31, 28);
+  transform: scale(1.05);
+  background-color:rgba(123, 134, 164,1) ;
+}
+
+.button_add_task{
+  user-select: none;
+  max-height: 100px;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgba(113, 99, 132,0.7) 0%, rgba(106, 40, 26,0.4) 100%);
+  border-width: 0;
+  box-shadow: 2px 2px 10px black;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 7px;
+  color: rgb(241, 241, 241);
+  border-radius: 10px 30px 15px 30px;
+  font-weight: 400;
+  transition: 1s;
+}
+
+.button_add_task:hover{
+  box-shadow: 5px 5px 10px rgb(1, 31, 28);
+  transform: scale(1.02);
+  background-color:rgba(100, 228, 228, 0.795);
+  opacity: 0.8;
+  text-decoration: none;
+}
+
